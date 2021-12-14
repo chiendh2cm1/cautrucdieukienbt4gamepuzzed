@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>game puzzed</title>
+</head>
+<style>
+    img {
+        display: block;
+        margin: 1em;
+        padding: 0.2em;
+        box-shadow: 2px 3px 3px black;
+        width: 600px;
+        height: 150px;
+    }
+
+    div {
+        max-width: 940px;
+    }
+</style>
+<body>
+<div>
+    <img id="img1" src="anh/funny-cat1_part1x1.jpg" alt="cat" onclick="clickImg1()">
+    <img id="img2" src="anh/monkey_part1x1.jpg" alt="monkey" onclick="clickImg2()">
+    <img id="img3" src="anh/panda_swap_part1x1.jpg" alt="panda" onclick="clickImg3()">
+    <img id="img4" src="anh/funny-cat1_part4x1.jpg" alt="cat" onclick="clickImg4()">
+    <img id="img5" src="anh/panda_swap_part5x1.jpg" alt="panda" onclick="clickImg5()">
+</div>
+<script>
+    let s1=0;
+    let s2=0;
+    let s3=0;
+    let s4=0;
+    let s5=0;
+    function clickImg1() {
+            if (s1 === 0) {
+                document.getElementById("img1").src = "anh/funny-cat1_part2x1.jpg";
+                document.getElementById("img1").alt = "cat";
+                s1++
+            } else if (s1 === 1) {
+                document.getElementById("img1").src = "anh/monkey_part1x1.jpg";
+                document.getElementById("img1").alt = "monkey";
+                s1++
+            } else {
+                document.getElementById("img1").src = "anh/panda_swap_part1x1.jpg";
+                document.getElementById("img1").alt = "panda";
+                s1 = 0;
+            }
+            bien()
+    }
+    function clickImg2() {
+        if (s2===0) {
+            document.getElementById("img2").src = "anh/funny-cat1_part2x1.jpg";
+            document.getElementById("img2").alt = "cat";
+            s2++
+        }else if (s2 ===1) {
+            document.getElementById("img2").src = "anh/monkey_part2x1.jpg";
+            document.getElementById("img2").alt = "monkey";
+            s2++
+        }else {
+            document.getElementById("img2").src = "anh/panda_swap_part2x1.jpg";
+            document.getElementById("img2").alt = "panda";
+            s2=0;
+        }
+        bien()
+    }
+    function clickImg3() {
+        if (s3===0) {
+            document.getElementById("img3").src = "anh/funny-cat1_part3x1.jpg";
+            document.getElementById("img3").alt = "cat";
+            s3++
+        }else if (s3 ===1) {
+            document.getElementById("img3").src = "anh/monkey_part3x1.jpg";
+            document.getElementById("img3").alt = "monkey";
+            s3++
+        }else {
+            document.getElementById("img3").src = "anh/panda_swap_part3x1.jpg";
+            document.getElementById("img3").alt = "panda";
+            s3=0
+        }
+        bien()
+    }
+    function clickImg4() {
+        if (s4===0) {
+            document.getElementById("img4").src = "anh/funny-cat1_part4x1.jpg";
+            document.getElementById("img4").alt = "cat";
+            s4++
+        }else if (s4 ===1) {
+            document.getElementById("img4").src = "anh/monkey_part4x1.jpg";
+            document.getElementById("img4").alt = "monkey";
+            s4++
+        }else {
+            document.getElementById("img4").src = "anh/panda_swap_part4x1.jpg";
+            document.getElementById("img4").alt = "panda";
+            s4=0
+        }
+        bien()
+    }
+    function clickImg5() {
+        if (s5===0) {
+            document.getElementById("img5").src = "anh/funny-cat1_part5x1.jpg";
+            document.getElementById("img5").alt = "cat";
+            s5++
+        }else if (s5===1) {
+            document.getElementById("img5").src = "anh/monkey_part5x1.jpg";
+            document.getElementById("img5").alt = "monkey";
+            s5++
+        }else {
+            document.getElementById("img5").src = "anh/panda_swap_part5x1.jpg";
+            document.getElementById("img5").alt = "panda";
+            s5=0
+        }
+        bien()
+    }
+    function bien() {
+        let alt1 = document.getElementById("img1").alt;
+        let alt2 = document.getElementById("img2").alt;
+        let alt3 = document.getElementById("img3").alt;
+        let alt4 = document.getElementById("img4").alt;
+        let alt5 = document.getElementById("img5").alt;
+        if (alt1 === alt2 && alt2 === alt3 && alt3 === alt4 && alt4 === alt5 && alt5 === alt1) {
+            document.getElementById('img1').style.boxShadow = "2px 2px 2px 2px red";
+            document.getElementById('img2').style.boxShadow = "2px 2px 2px 2px red";
+            document.getElementById('img3').style.boxShadow = "2px 2px 2px 2px red";
+            document.getElementById('img4').style.boxShadow = "2px 2px 2px 2px red";
+            document.getElementById('img5').style.boxShadow = "2px 2px 2px 2px red";
+        } else {
+            document.getElementById('img1').style.boxShadow = "none";
+            document.getElementById('img2').style.boxShadow = "none";
+            document.getElementById('img3').style.boxShadow = "none";
+            document.getElementById('img4').style.boxShadow = "none";
+            document.getElementById('img5').style.boxShadow = "none";
+        }
+    }
+</script>
+</body>
+</html>
